@@ -1,6 +1,23 @@
 Server {
   DefaultDocument = index.php
-  SourceRoot = /app/public/
+  SourceRoot = /app/public
+}
+
+Repo {
+  Authoritative = true
+}
+
+VirtualHost {
+  * {
+    Pattern = .*
+    RewriteRules {
+      * {
+        pattern = ^(.*)$
+        to = index.php$1
+        qsa = true
+      }
+    }
+  }
 }
 
 StaticFile {
