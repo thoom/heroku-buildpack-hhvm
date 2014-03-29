@@ -3,10 +3,6 @@ Server {
   SourceRoot = /app/public
 }
 
-Repo {
-  Authoritative = true
-}
-
 VirtualHost {
   * {
     Pattern = .*
