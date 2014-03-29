@@ -3,18 +3,18 @@
 set -e
 shopt -s dotglob
 
-cout "Symlinking MySQL to work with Dokku"
-ln -s /usr/lib/x86_64-linux-gnu/libmysqlclient.so.18       /usr/lib/x86_64-linux-gnu/libmysqlclient.so.16
-ln -s /usr/lib/x86_64-linux-gnu/libmysqlclient.so.18.0.0   /usr/lib/x86_64-linux-gnu/libmysqlclient.so.16.0.0
-ln -s /usr/lib/x86_64-linux-gnu/libmysqlclient_r.so.18     /usr/lib/x86_64-linux-gnu/libmysqlclient_r.so.16
-ln -s /usr/lib/x86_64-linux-gnu/libmysqlclient_r.so.18.0.0 /usr/lib/x86_64-linux-gnu/libmysqlclient_r.so.16.0.0
-
 BASE_DIR="$( cd -P "$( dirname "$0" )" && pwd )"
 BUILD_DIR="$1"
 COMPOSER_URL="http://getcomposer.org/composer.phar"
 
 source $BASE_DIR/common
 source $BASE_DIR/linter/lint
+
+cout "Symlinking MySQL to work with Dokku"
+ln -s /usr/lib/x86_64-linux-gnu/libmysqlclient.so.18       /usr/lib/x86_64-linux-gnu/libmysqlclient.so.16
+ln -s /usr/lib/x86_64-linux-gnu/libmysqlclient.so.18.0.0   /usr/lib/x86_64-linux-gnu/libmysqlclient.so.16.0.0
+ln -s /usr/lib/x86_64-linux-gnu/libmysqlclient_r.so.18     /usr/lib/x86_64-linux-gnu/libmysqlclient_r.so.16
+ln -s /usr/lib/x86_64-linux-gnu/libmysqlclient_r.so.18.0.0 /usr/lib/x86_64-linux-gnu/libmysqlclient_r.so.16.0.0
 
 cd "$BUILD_DIR"
 
