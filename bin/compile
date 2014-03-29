@@ -10,11 +10,12 @@ COMPOSER_URL="http://getcomposer.org/composer.phar"
 source $BASE_DIR/common
 source $BASE_DIR/linter/lint
 
-cout "Symlinking MySQL to work with Dokku"
-ln -s /usr/lib/x86_64-linux-gnu/libmysqlclient.so.18       /usr/lib/x86_64-linux-gnu/libmysqlclient.so.16
-ln -s /usr/lib/x86_64-linux-gnu/libmysqlclient.so.18.0.0   /usr/lib/x86_64-linux-gnu/libmysqlclient.so.16.0.0
-ln -s /usr/lib/x86_64-linux-gnu/libmysqlclient_r.so.18     /usr/lib/x86_64-linux-gnu/libmysqlclient_r.so.16
-ln -s /usr/lib/x86_64-linux-gnu/libmysqlclient_r.so.18.0.0 /usr/lib/x86_64-linux-gnu/libmysqlclient_r.so.16.0.0
+#This is a hack that I don't like being in the buildpack. It should be in the Docker image until I get that resolved.
+#cout "Symlinking MySQL to work with Dokku"
+#ln -s /usr/lib/x86_64-linux-gnu/libmysqlclient.so.18       /usr/lib/x86_64-linux-gnu/libmysqlclient.so.16
+#ln -s /usr/lib/x86_64-linux-gnu/libmysqlclient.so.18.0.0   /usr/lib/x86_64-linux-gnu/libmysqlclient.so.16.0.0
+#ln -s /usr/lib/x86_64-linux-gnu/libmysqlclient_r.so.18     /usr/lib/x86_64-linux-gnu/libmysqlclient_r.so.16
+#ln -s /usr/lib/x86_64-linux-gnu/libmysqlclient_r.so.18.0.0 /usr/lib/x86_64-linux-gnu/libmysqlclient_r.so.16.0.0
 
 cd "$BUILD_DIR"
 
